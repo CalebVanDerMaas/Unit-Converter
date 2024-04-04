@@ -11,6 +11,10 @@ const mileToKm = document.getElementById('mileToKm');
 const kmToMile = document.getElementById('kmToMile');
 const hours = document.getElementById('hours');
 const days = document.getElementById('days');
+const minutes = document.getElementById('minutes');
+const USD = document.getElementById('USD');
+const TL = document.getElementById('TL');
+const IDR = document.getElementById('IDR');
 const resetButton = document.getElementById('reset');
 
 
@@ -22,10 +26,14 @@ const lengthButton = document.getElementById('length').addEventListener('click',
 	toKelvin.style.display = 'none';
 	hours.style.display = 'none';
 	days.style.display = 'none';
+	minutes.style.display = 'none';
 	mileToKm.style.display = 'none';
 	kmToMile.style.display = 'none';
 	toMetric.style.display = 'block';
 	toImperial.style.display='block';
+	USD.style.display = 'none';
+	TL.style.display = 'none';
+	IDR.style.display = 'none';
 	resetButton.style.display = 'block';
 	toMetric.addEventListener('click', (e) => {
 		output.innerHTML = `${input.value} inch &rarr; ${lengthUnits.imperial.inch()} mm <br>
@@ -54,10 +62,14 @@ const massButton = document.getElementById('mass').addEventListener('click', (e)
 	toKelvin.style.display = 'none';
 	hours.style.display = 'none';
 	days.style.display = 'none';
+	minutes.style.display = 'none';
 	mileToKm.style.display = 'none';
 	kmToMile.style.display = 'none';
 	toMetric.style.display = 'block';
 	toImperial.style.display='block';
+	USD.style.display = 'none';
+	TL.style.display = 'none';
+	IDR.style.display = 'none';
 	resetButton.style.display = 'block';
 	toMetric.addEventListener('click', (e) => {
 		output.innerHTML = `${input.value} ounce &rarr; ${massUnits.imperial.ounce()} gram <br>
@@ -85,10 +97,14 @@ const volumeButton = document.getElementById('volume').addEventListener('click',
 	toKelvin.style.display = 'none';
 	hours.style.display = 'none';
 	days.style.display = 'none';
+	minutes.style.display = 'none';
 	mileToKm.style.display = 'none';
 	kmToMile.style.display = 'none';
 	toMetric.style.display = 'block';
 	toImperial.style.display='block';
+	USD.style.display = 'none';
+	TL.style.display = 'none';
+	IDR.style.display = 'none';
 	resetButton.style.display = 'block';
 	toMetric.addEventListener('click', (e) => {
 		output.innerHTML = `${input.value} fl. ounce &rarr; ${volumeUnits.imperial.fluidOunce()} ml <br>
@@ -114,25 +130,29 @@ const temperatureButton = document.getElementById('temperature').addEventListene
 	toImperial.style.display = 'none';
 	hours.style.display = 'none';
 	days.style.display = 'none';
+	minutes.style.display = 'none';
 	mileToKm.style.display = 'none';
 	kmToMile.style.display = 'none';
 	input.style.display = 'block';
 	toCelsius.style.display = 'block';
 	toFahrenheit.style.display = 'block';
 	toKelvin.style.display = 'block';
+	USD.style.display = 'none';
+	TL.style.display = 'none';
+	IDR.style.display = 'none';
 	resetButton.style.display = 'block';
 	toCelsius.addEventListener('click', (e) =>{
-		output.innerHTML =`${input.value} &deg;F &rarr; ${temperatureUnits.fahrenheit.fToC()} &deg;C <br>
-		${input.value} &deg;K &rarr; ${temperatureUnits.kelvin.kToC()} &deg;C`;
+		output.innerHTML =`${input.value} &deg;C &rarr; ${temperatureUnits.celsius.cToF()} &deg;F <br>
+		${input.value} &deg;C &rarr; ${temperatureUnits.celsius.cToK()} &deg;K`;
 		});
 	toFahrenheit.addEventListener('click', (e) =>{
-		output.innerHTML = `${input.value} &deg;C &rarr; ${temperatureUnits.celsius.cToF()} &deg;F <br>
-		${input.value} &deg;K &rarr; ${temperatureUnits.kelvin.kToF()} &deg;F <br>
+		output.innerHTML = `${input.value} &deg;F &rarr; ${temperatureUnits.fahrenheit.fToC()} &deg;C <br>
+		${input.value} &deg;F &rarr; ${temperatureUnits.fahrenheit.fToK()} &deg;K <br>
 		`;
 	});
 	toKelvin.addEventListener('click', (e) =>{
-		output.innerHTML = `${input.value} &deg;F &rarr; ${temperatureUnits.fahrenheit.fToK()} &deg;K <br>
-		${input.value} &deg;C &rarr; ${temperatureUnits.celsius.cToK()} &deg;K <br>
+		output.innerHTML = `${input.value} &deg;K &rarr; ${temperatureUnits.kelvin.kToC()} &deg;C <br>
+		${input.value} &deg;K &rarr; ${temperatureUnits.kelvin.kToF} &deg;F <br>
 		`;
 	});
 	output.style.display = 'block';
@@ -150,8 +170,12 @@ const speedButton = document.getElementById('speed').addEventListener('click', (
 	toKelvin.style.display = 'none';
 	hours.style.display = 'none';
 	days.style.display = 'none';
+	minutes.style.display = 'none';
 	mileToKm.style.display = 'block';
 	kmToMile.style.display = 'block';
+	USD.style.display = 'none';
+	TL.style.display = 'none';
+	IDR.style.display = 'none';
 	resetButton.style.display = 'block';
 	mileToKm.addEventListener('click', (e) =>{
 		output.innerHTML = `${input.value} mph &rarr; ${speedUnits.mphToKmph()} km/hr`;
@@ -175,14 +199,59 @@ const timeButton = document.getElementById('time').addEventListener('click', (e)
 	kmToMile.style.display = 'none';
 	hours.style.display = 'block';
 	days.style.display = 'block';
+	minutes.style.display = 'block';
+	USD.style.display = 'none';
+	TL.style.display = 'none';
+	IDR.style.display = 'none';
 	resetButton.style.display = 'block';
 	hours.addEventListener('click', (e) =>{
-		output.innerHTML = `${input.value} minute &rarr; ${timeUnits.hours.minTohr()} hour <br>
-		${input.value} day &rarr; ${timeUnits.hours.dayTohr()} hour`;
+		output.innerHTML = `${input.value} hour &rarr; ${timeUnits.days.hrToDay()} day <br>
+		${input.value} hour &rarr; ${timeUnits.minutes.hrToMinute()} minute`;
 	});
 	days.addEventListener('click', (e) =>{
-		output.innerHTML = `${input.value} minute &rarr; ${timeUnits.days.minToDay()} day <br>
-		${input.value} hour &rarr; ${timeUnits.days.hrToDay()} day`;
+		output.innerHTML = `${input.value} day &rarr; ${timeUnits.hours.dayTohr()} hour <br>
+		${input.value} day &rarr; ${timeUnits.minutes.dayToMinute()} minute`;
+	});
+	minutes.addEventListener('click', (e) =>{
+		output.innerHTML = `${input.value} minute &rarr; ${timeUnits.hours.minTohr()} hour <br>
+		${input.value} minute &rarr; ${timeUnits.days.minToDay()} day`;
+	});
+	output.style.display = 'block';
+	output.innerHTML = "";
+	input.value = null;
+});
+
+resetButton.addEventListener('click', (e) =>{
+	location.reload();
+});
+
+const currencyButton = document.getElementById('currency').addEventListener('click', (e) => {
+	input.style.display = 'block';
+	toMetric.style.display = 'none';
+	toImperial.style.display = 'none';
+	toFahrenheit.style.display = 'none';
+	toCelsius.style.display = 'none';
+	toKelvin.style.display = 'none';
+	mileToKm.style.display = 'none';
+	kmToMile.style.display = 'none';
+	hours.style.display = 'none';
+	days.style.display = 'none';
+	minutes.style.display = 'none';
+	USD.style.display = 'block'
+	TL.style.display = 'block'
+	IDR.style.display = 'block'
+	resetButton.style.display = 'block';
+	USD.addEventListener('click', (e) =>{
+		output.innerHTML = `${input.value} USD &rarr; ${currencyUnits.USD.USDtoIDR()} IDR <br>
+		${input.value} USD &rarr; ${currencyUnits.USD.USDtoTL()} TL`;
+	});
+	TL.addEventListener('click', (e) =>{
+		output.innerHTML = `${input.value} TL &rarr; ${currencyUnits.TL.TLtoUSD()} USD <br>
+		${input.value} TL &rarr; ${currencyUnits.TL.TLtoIDR()} IDR`;
+	});
+	IDR.addEventListener('click', (e) =>{
+		output.innerHTML = `${input.value} IDR &rarr; ${currencyUnits.IDR.IDRtoUSD()} USD <br>
+		${input.value} IDR &rarr; ${currencyUnits.IDR.IDRtoTL()} TL`;
 	});
 	output.style.display = 'block';
 	output.innerHTML = "";
@@ -367,7 +436,7 @@ const timeUnits = {
 			return mhr;
 		},
 		dayTohr(){
-			let dhr = input.value*24;
+			let dhr = (input.value*24).toFixed(3);
 			return dhr;
 		}
 	},
@@ -380,7 +449,51 @@ const timeUnits = {
 			let hrday = (input.value / 24).toFixed(2);
 			return hrday;
 		}
+	},
+	minutes: {
+		hrToMinute(){
+			let hrmin = (input.value * 60).toFixed(2);
+			return hrmin;
+		},
+		dayToMinute(){
+			let daymin = (input.value * 1440).toFixed(2);
+			return daymin;
+		}
 	}
 };
+
+const currencyUnits = {
+	USD: {
+		USDtoTL(){
+			let USDTL = (input.value*31.89).toFixed(2);
+			return USDTL;
+		},
+		USDtoIDR(){
+			let USDIDR = (input.value*15868.99).toFixed(2);
+			return USDIDR;
+		}
+	},
+	TL: {
+		TLtoUSD(){
+			let TLUSD = (input.value / 31.89).toFixed(2);
+			return TLUSD;
+		},
+		TLtoIDR(){
+			let TLIDR = (input.value * 497.64).toFixed(2);
+			return TLIDR;
+		}
+	},
+	IDR: {
+		IDRtoUSD(){
+			let IDRUSD = (input.value / 15868.99).toFixed(2);
+			return IDRUSD;
+		},
+		IDRtoTL(){
+			let IDRTL = (input.value / 497.64).toFixed(2);
+			return IDRTL;
+		}
+	}
+};
+
 
 
